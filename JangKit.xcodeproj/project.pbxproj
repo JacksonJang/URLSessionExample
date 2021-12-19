@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E2B3C1CE276EF7CD002F9D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3C1CD276EF7CD002F9D21 /* AppDelegate.swift */; };
-		E2B3C1D0276EF7CD002F9D21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3C1CF276EF7CD002F9D21 /* SceneDelegate.swift */; };
 		E2B3C1D2276EF7CD002F9D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3C1D1276EF7CD002F9D21 /* ViewController.swift */; };
 		E2B3C1D5276EF7CD002F9D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B3C1D3276EF7CD002F9D21 /* Main.storyboard */; };
 		E2B3C1D7276EF7CE002F9D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B3C1D6276EF7CE002F9D21 /* Assets.xcassets */; };
 		E2B3C1DA276EF7CE002F9D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B3C1D8276EF7CE002F9D21 /* LaunchScreen.storyboard */; };
+		E2B3C1E3276EF93B002F9D21 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3C1E2276EF93B002F9D21 /* APIService.swift */; };
+		E2B3C1E7276EFA38002F9D21 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3C1E6276EFA38002F9D21 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2B3C1CA276EF7CD002F9D21 /* JangKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JangKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3C1CD276EF7CD002F9D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2B3C1CF276EF7CD002F9D21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2B3C1D1276EF7CD002F9D21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2B3C1D4276EF7CD002F9D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2B3C1D6276EF7CE002F9D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2B3C1D9276EF7CE002F9D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2B3C1DB276EF7CE002F9D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B3C1E2276EF93B002F9D21 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E2B3C1E6276EFA38002F9D21 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 		E2B3C1CC276EF7CD002F9D21 /* JangKit */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3C1E1276EF916002F9D21 /* Network */,
 				E2B3C1CD276EF7CD002F9D21 /* AppDelegate.swift */,
-				E2B3C1CF276EF7CD002F9D21 /* SceneDelegate.swift */,
 				E2B3C1D1276EF7CD002F9D21 /* ViewController.swift */,
 				E2B3C1D3276EF7CD002F9D21 /* Main.storyboard */,
 				E2B3C1D6276EF7CE002F9D21 /* Assets.xcassets */,
@@ -65,6 +67,15 @@
 				E2B3C1DB276EF7CE002F9D21 /* Info.plist */,
 			);
 			path = JangKit;
+			sourceTree = "<group>";
+		};
+		E2B3C1E1276EF916002F9D21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3C1E2276EF93B002F9D21 /* APIService.swift */,
+				E2B3C1E6276EFA38002F9D21 /* Networking.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B3C1D2276EF7CD002F9D21 /* ViewController.swift in Sources */,
+				E2B3C1E3276EF93B002F9D21 /* APIService.swift in Sources */,
 				E2B3C1CE276EF7CD002F9D21 /* AppDelegate.swift in Sources */,
-				E2B3C1D0276EF7CD002F9D21 /* SceneDelegate.swift in Sources */,
+				E2B3C1E7276EFA38002F9D21 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
