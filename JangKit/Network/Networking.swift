@@ -31,6 +31,14 @@ extension Networking {
             return
         }
         
+        //TODO: 1. Need to divide as Method
+        
+        //TODO: 2. Need to include Header
+        
+        //TODO: 3. Need to put Params
+        
+        
+        //Default
         let task = URLSession.shared.dataTask(with: url,  completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
