@@ -30,19 +30,31 @@ public enum ContentType: String {
 protocol Networking {}
 
 extension Networking {
-    internal func request(method: Method, url: String, params: [String: Any] = [:], headers:[String:String] = [:], callback: @escaping Handler) {
+    internal func request(method: Method = .GET, url: String, params: [String: Any] = [:], headers:[String:String] = [:], callback: @escaping Handler) {
         
         var request = URLRequest(url: URL(string: url)!)
         
+        //Set Method
         request.httpMethod = method.rawValue
         
-        let paramString = (params.compactMap({ (key, value) -> String in
-            return "\(key)=\(value)"
-        }) as Array).joined(separator: "&")
-        let bodyData = paramString.data(using: .utf8)
+        //Check Param
+        if !(params.isEmpty) {
+            let paramString = (params.compactMap({ (key, value) -> String in
+                return "\(key)=\(value)"
+            }) as Array).joined(separator: "&")
+            let bodyData = paramString.data(using: .utf8)
+            
+            request.httpBody = bodyData
+        }
         
-        request.httpBody = bodyData
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        //Check Headers
+        if (headers.isEmpty) {
+            request.setValue(ContentType.APPLICATION_FORM_URLENCODED.rawValue, forHTTPHeaderField: "Content-Type")
+        } else {
+            for (key, item) in headers {
+                request.setValue(item, forHTTPHeaderField: key)
+            }
+        }
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
@@ -58,12 +70,6 @@ extension Networking {
             }
         })
         task.resume()
-        
-        //TODO: 2. Need to include Header
-        
-        
-        //TODO: 3. Need to put Params
-        
         
         //TODO: Default
         //Create URL Object
@@ -86,4 +92,5 @@ extension Networking {
 //        })
 //        task.resume()
     }
+    
 }
